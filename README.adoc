@@ -1,0 +1,25 @@
+= Jenkins Pipeline Shared Library Gradle Plugin
+:uri-shared-library-plugin: https://github.com/mkobit/jenkins-pipeline-shared-libraries-gradle-plugin
+:uri-jenkins-shared-library-docs: https://jenkins.io/doc/book/pipeline/shared-libraries/
+:uri-jenkins-pipeline-unit: https://github.com/lesfurets/JenkinsPipelineUnit
+:uri-build-status-image: https://circleci.com/gh/mkobit/jenkins-pipeline-shared-library-example/tree/master.svg?style=svg
+:circle-ci-status-badge: image:{uri-build-status-image}["CircleCI", link="https://circleci.com/gh/mkobit/jenkins-pipeline-shared-library-example/tree/master"]
+:uri-zenhub-badge: https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png
+:version-badge: image:{uri-version-badge-image}["Plugin Version", link="{uri-gradle-plugin-portal}"]
+:zenhub-badge: image:{uri-zenhub-badge}["ZenHub Badge", link="https://www.zenhub.com/"]
+
+{circle-ci-status-badge}
+{zenhub-badge}
+
+NOTE: Contributions for examples are welcome!
+
+== Purpose
+
+This repository is an example of a Jenkins link:{uri-jenkins-shared-library-docs}[Jenkins Pipeline Shared Library] that uses the link:{uri-shared-library-plugin}[_Shared Library Gradle Plugin_] for development and testing of shared libraries.
+
+Explore this project by:
+
+* Importing into IntelliJ
+* Activating the `resources/idea.gdsl` to see how the Jenkins steps auto-completion works
+* Build, test, and run integration tests with `./gradlew build`
+* See how test code is generated for simplifying tests (like `com.mkobit.jenkins.pipelines.codegen.LocalLibraryRetriever`)
