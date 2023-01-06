@@ -17,7 +17,7 @@ def call(Map params = [:]) {
     stages {
       stage("Publish") {
         steps {
-          sh "sh gradlew clean publish"
+          sh "sh gradlew clean build"
         }
       }
     }
