@@ -15,6 +15,11 @@ def call(Map params = [:]) {
     }
 
     stages {
+      stage("Prepare") {
+        steps {
+          vkSendStart()
+        }
+      }
       stage("Publish") {
         steps {
           sh "sh gradlew clean build"
@@ -22,6 +27,9 @@ def call(Map params = [:]) {
       }
     }
     post {
+      always {
+        vkSendEnd()
+      }
       success {
         script {
           if (!artifacts.isEmpty())
