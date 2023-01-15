@@ -22,7 +22,7 @@ def call(Map params = [:]) {
       }
       stage("Publish") {
         steps {
-          sh "sh gradlew clean publish"
+          sh "sh gradlew clean build publish"
         }
       }
     }
