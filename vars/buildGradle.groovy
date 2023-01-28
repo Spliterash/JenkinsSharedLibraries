@@ -20,7 +20,7 @@ def call(Map params = [:]) {
           vkSendStart()
         }
       }
-      stage("Publish") {
+      stage("Build") {
         steps {
           sh "sh gradlew clean build"
         }
