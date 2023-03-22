@@ -1,3 +1,13 @@
+def archiveFilesWithoutPath(globPattern) {
+  def files = findFiles(glob: globPattern)
+  for (def i = 0; i < files.size(); i++) {
+    def file = files[i]
+    def parentFolder = new File(file.path).getParent()
+    dir(parentFolder) {
+      archiveArtifacts artifacts: file.name, fingerprint: true
+    }
+  }
+}
 def call(Map params = [:]) {
   def jdkVersion = params.containsKey("jdk") ? params.jdk : 17
   def imageName = "amazoncorretto:${jdkVersion}"
@@ -33,7 +43,7 @@ def call(Map params = [:]) {
       success {
         script {
           if (!artifacts.isEmpty())
-            archiveArtifacts artifacts: artifacts.join(","), fingerprint: true
+            archiveFilesWithoutPath(artifacts.join(","))
         }
       }
     }
